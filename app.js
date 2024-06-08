@@ -9,7 +9,7 @@ function SignUp() {
     var cPass = cPassword.value;
 
     if (username == "" || password == "") {
-        alert("Try again");
+        alert("Thử lại");           
     }
     else if (password == cPass) {
         var newObj = {
@@ -18,12 +18,12 @@ function SignUp() {
         }
         var newJSON = JSON.stringify(newObj);
         localStorage.setItem("tk_" + username, newJSON);
-        alert("dang ky thanh cong");
+        alert("Đăng ký thành công");
         window.location.href = "login.html";
 
     }
     else {
-        alert("dang ky that bai");
+        alert("Đăng ký thất bại");
 
     }
 
@@ -38,14 +38,14 @@ function SignIn() {
     if (checkJSON != null) {
         var checkObj = JSON.parse(checkJSON);
         if (ndMkLogin == checkObj.password) {
-            alert("Congratulation!");
+            alert("Đăng nhập thành công");
             window.location = "./Begin.html";
         }
         else {
-            alert("Sign in fail!")
+            alert("Đăng nhập thất bại")
         }
     } else {
-        alert("Account not found!!!")
+        alert("Tài khoản không tồn tại")
     }
 }
 
@@ -86,7 +86,7 @@ const searchInput = document.getElementById("search-input");
 const cityName = document.querySelector(".city-name");
 const weatherState = document.querySelector(".weather-state");
 const weatherIcon = document.querySelector(".weather-icon");
-const temperature = document.querySelector(".temperature");
+const temperature = document.querySelector(".temperature");                                                                                                                             
 const sunrise = document.querySelector(".sunrise");
 const sunset = document.querySelector(".sunset");
 const humidity = document.querySelector(".humidity");
@@ -116,7 +116,7 @@ function sendFeedback() {
 
 
     if( name == "" || email == "" || message == "" ){
-        alert("Try again");
+        alert("Thử lại");
     }
     else{
         var newObj = {
@@ -127,7 +127,7 @@ function sendFeedback() {
         }
         var newJSON = JSON.stringify(newObj);
         localStorage.setItem("fb_"+name, newJSON);
-        alert("Da gui");
+        alert("Gửi thành công");
 
 
     }
